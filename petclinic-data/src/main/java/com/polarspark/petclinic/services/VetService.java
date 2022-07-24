@@ -6,10 +6,7 @@ import com.polarspark.petclinic.model.Vet;
 
 import java.util.Set;
 
-public interface VetService {
+public interface VetService extends CrudService<Vet, Long> {
 
-    Vet findByID(Long id);
-    Vet save(Vet vet);
-    Set<Owner> findAll();
 
 }
