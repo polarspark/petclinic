@@ -7,10 +7,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="petclinic-web" />
         <module name="petclinic-data" />
       </profile>
+      <profile name="Annotation profile for Pet Clinic Tutorial" enabled="true">
+        <sourceOutputDir name="../target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="petclinic-web" />
+      </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="petclinic-web" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
