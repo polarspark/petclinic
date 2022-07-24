@@ -4,10 +4,8 @@ import javax.persistence.Id;
 import java.time.LocalDate;
 
 
-public class Pet {
+public class Pet extends BaseEntity {
 
-    @Id
-    private Long id;
     private PetType petType;
     private Owner owner;
     private LocalDate birthDate;

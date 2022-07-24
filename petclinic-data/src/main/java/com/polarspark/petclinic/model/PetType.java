@@ -3,11 +3,9 @@ package com.polarspark.petclinic.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-@Entity
-public class PetType {
 
-    @Id
-    private Long id;
+public class PetType extends BaseEntity {
+
     private String name;
 
     public String getName() {
