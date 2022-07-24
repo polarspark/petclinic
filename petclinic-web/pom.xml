@@ -3,19 +3,19 @@
     <parent>
         <artifactId>petclinic</artifactId>
         <groupId>com.polarspark</groupId>
-        <version>0.0.3-SNAPSHOT</version>
+        <version>0.0.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>petclinic-web</artifactId>
     <groupId>com.polarspark</groupId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
 
     <dependencies>
         <dependency>
             <artifactId>petclinic-data</artifactId>
             <groupId>com.polarspark</groupId>
-            <version>0.0.3-SNAPSHOT</version>
+            <version>0.0.3</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
