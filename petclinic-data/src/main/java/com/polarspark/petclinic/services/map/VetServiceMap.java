@@ -4,9 +4,12 @@ import com.polarspark.petclinic.model.Owner;
 import com.polarspark.petclinic.model.Vet;
 import com.polarspark.petclinic.services.CrudService;
 import com.polarspark.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
