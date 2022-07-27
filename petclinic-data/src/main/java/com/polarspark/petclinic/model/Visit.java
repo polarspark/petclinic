@@ -15,6 +15,10 @@ import java.time.LocalDate;
 @Table(name = "visits")
 public class Visit {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "date")
     private LocalDate date;
     @Column(name = "description")
@@ -23,6 +27,15 @@ public class Visit {
     @ManyToOne
     @JoinColumn(name = "pet_id")
     private Pet pet;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public LocalDate getDate() {
         return date;
