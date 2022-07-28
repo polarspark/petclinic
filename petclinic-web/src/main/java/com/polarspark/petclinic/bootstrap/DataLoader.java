@@ -1,10 +1,7 @@
 package com.polarspark.petclinic.bootstrap;
 
 import com.polarspark.petclinic.model.*;
-import com.polarspark.petclinic.services.OwnerService;
-import com.polarspark.petclinic.services.PetTypeService;
-import com.polarspark.petclinic.services.SpecialtyService;
-import com.polarspark.petclinic.services.VetService;
+import com.polarspark.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -16,14 +13,15 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
     private final PetTypeService petTypeService;
-
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -73,6 +71,12 @@ public class DataLoader implements CommandLineRunner {
         mikesPet.setName("Rosco");
         owner1.getPets().add(mikesPet);
         ownerService.save(owner1);
+        Visit visit1 = new Visit();
+        visit1.setPet(mikesPet);
+        visit1.setDate(LocalDate.now());
+        visit1.setDescription("Sick");
+        visitService.save(visit1);
+
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Sam");
@@ -87,6 +91,13 @@ public class DataLoader implements CommandLineRunner {
         samsPet.setName("Mr. Sparkles");
         owner2.getPets().add(samsPet);
         ownerService.save(owner2);
+        Visit visit2 = new Visit();
+        visit2.setPet(samsPet);
+        visit2.setDate(LocalDate.now());
+        visit2.setDescription("Needs a hug.");
+        visitService.save(visit2);
+
+
 
         System.out.println("Loaded Owners...");
 
