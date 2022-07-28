@@ -6,7 +6,8 @@ import com.polarspark.petclinic.repositories.PetRepository;
 import com.polarspark.petclinic.repositories.PetTypeRepository;
 import com.polarspark.petclinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -19,8 +20,8 @@ import java.util.Set;
  * @since 3.0
  **/
 
-@Component
-@Profile("sprindatajpa")
+@Service
+@Profile("springdatajpa")
 public class OwnerSDJpaService implements OwnerService {
 
     private final OwnerRepository ownerRepository;
